@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+    nodeserver:
+      build:
+        context: ./app
+      container_name: nodeserver
+      entrypoint: wait-for mysql-db:3306 -t 30 -- docker-entrypoint.sh
+      command: node index.js
+      working_dir: /usr/src/app
+      networks:
+        - app-network
+      depends_on:
+        - db
+    
+    nginx:
+      restart: always
+      build:
+          context: ./nginx
+      container_name: nginx
+      networks:
+        - app-network
+      ports:
+        - "8080:80"
+
+    db:
+      image: mysql:5.7
+      command: --innodb-use-native-aio=0
+      container_name: mysql-db
+      restart: always
+      environment:
+        - MYSQL_DATABASE=nodeapp
+        - MYSQL_ROOT_PASSWORD=root
+      networks:
+        - app-network
+
+networks:
+  app-network:
+    driver: bridge
