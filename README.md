@@ -13,5 +13,5 @@ Desafio proposto no curso de Docker da Full Cycle, que consiste em uma aplicaç�
 
 ## Referências
 
-Curso [Full Cycle](https://curso.fullcycle.com.br/curso-fullcycle/).
-[NGINX with Docker and Node.js](https://ashwin9798.medium.com/nginx-with-docker-and-node-js-a-beginners-guide-434fe1216b6b)
+- Curso [Full Cycle](https://curso.fullcycle.com.br/curso-fullcycle/).
+- [NGINX with Docker and Node.js](https://ashwin9798.medium.com/nginx-with-docker-and-node-js-a-beginners-guide-434fe1216b6b).
