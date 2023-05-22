@@ -4,7 +4,8 @@
   "description": "aplicação de teste",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js localhost 3000"
+    "dev": "npx nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "mysql": "^2.18.1",
     "node-random-name": "^1.0.1",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

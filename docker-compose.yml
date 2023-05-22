@@ -5,8 +5,10 @@ services:
         context: ./app
       container_name: nodeserver
       entrypoint: wait-for mysql-db:3306 -t 30 -- docker-entrypoint.sh
-      command: node index.js
+      command: npm run dev
       working_dir: /usr/src/app
+      volumes:
+      - ./app/:/usr/src/app
       networks:
         - app-network
       depends_on:
